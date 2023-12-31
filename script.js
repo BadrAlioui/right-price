@@ -11,6 +11,7 @@ container.append(p);
 
 let maxNumber = 10;
 let number = Math.floor(Math.random()* maxNumber);
+alert(number);
 
 
 let tries = 3;
@@ -22,22 +23,31 @@ button.addEventListener('click', function() {
  if (guess !== number){
   tries--;
   if (guess > number){
-    p.textContent = 'Too high, trie again and you have ' + tries + ' left';
+    p.innerHTML = `<div><p>Too high, trie again and you have ${tries} tries left</p></div>`;
     p.style.color = 'white';
+    p.style.width = '40%';
+    p.style.textAlign = 'center';
 
   }else{
-    p.textContent = 'Too low, trie again and you have ' + tries + ' left';
+    p.innerHTML = `<div></p>Too low, trie again and you have ${tries} tries left</p></div>`;
     p.style.color = 'white';
+    p.style.width = '40%';
+    p.style.textAlign = 'center';
   }
 
  }else{
-  p.textContent = 'You won';
-  p.style.backgroundColor = '#074009';
+  p.innerHTML = "<div></p>You won</p></div>";
+  p.style.backgroundColor = '#22b005';
   p.style.color = 'white';
+  p.style.width = '40%';
+  p.style.textAlign = 'center';
   button.disabled = true;
  }if (tries === 0){
-  p.textContent = 'You lost';
+  p.innerHTML = "<div></p>You have lost</p></div>";
   p.style.color = 'white';
+  p.style.width = '40%';
+  p.style.textAlign = 'center';
+  p.style.backgroundColor = 'red';
   button.disabled = true;
  }
  if (tries ===2){
@@ -46,8 +56,5 @@ button.addEventListener('click', function() {
   p.style.backgroundColor = 'orange';
  }
 
- else if (tries === 0){
-  p.textContent = 'You lost, no more tries';
-  p.style.backgroundColor = 'red';
-  button.disabled = true;
- }});
+ 
+ });
