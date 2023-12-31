@@ -11,7 +11,7 @@ container.append(p);
 
 let maxNumber = 10;
 let number = Math.floor(Math.random()* maxNumber);
-alert(number);
+
 
 
 let tries = 3;
